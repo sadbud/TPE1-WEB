@@ -46,6 +46,9 @@ nav {
 
 .container {
   padding: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
 }
 
 .picture {

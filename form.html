@@ -26,6 +26,7 @@
         </ul>
       </nav>
       <article class="container">
+        <h1>Fill the form</h1>
         <form action="/my-handling-form-page" method="post">
           <label for="name">Nombre:</label>
           <input type="text" id="name" name="user_name" />
@@ -37,7 +38,31 @@
           <textarea id="msg" name="user_message"></textarea>
         </form>
       </article>
+      <section>
+        <table>
+          <tr>
+            <td>
+              <input type="text" id="mainCaptcha" readonly="readonly" />
+              <input type="button" id="refresh" value="Refresh" />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input type="text" id="txtInput" />
+            </td>
+            <td>
+              <input id="Button1" type="button" value="Check" />
+            </td>
+          </tr>
+          <tr>
+            <td><span id="error" style="color: red"></span></td>
+          </tr>
+          <tr>
+            <td><span id="success" style="color: green"></span></td>
+          </tr>
+        </table>
+      </section>
     </main>
-    <script src="js/script.js"></script>
+    <script src="js/captcha.js"></script>
   </body>
 </html>
