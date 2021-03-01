@@ -2,6 +2,8 @@
 //vars
 let refreshCaptcha = document.querySelector("#refresh");
 let formValidator = document.querySelector("#Button1");
+var result = document.getElementById("result");
+var txtInput = document.querySelector("#txtInput");
 
 //events
 document.addEventListener("onload", generateCaptcha);
@@ -73,19 +75,21 @@ function generateCaptcha() {
   }
   var code = a + "" + b + "" + "" + c + "" + d;
   document.getElementById("mainCaptcha").value = code;
+  result.innerHTML = "";
+  txtInput.value = "";
 }
 
 function CheckValidCaptcha() {
   var string1 = removeSpaces(document.getElementById("mainCaptcha").value);
-  var string2 = removeSpaces(document.getElementById("txtInput").value);
-  if (string1 == string2) {
-    document.getElementById("success").innerHTML =
-      "Form is validated Successfully";
+  var string2 = removeSpaces(txtInput.value);
+  if (string1 === string2) {
+    result.innerHTML = "Form is validated Successfully";
+    result.className = "success";
     //alert("Form is validated Successfully");
     return true;
   } else {
-    document.getElementById("error").innerHTML =
-      "Please enter a valid captcha.";
+    result.innerHTML = "Please enter a valid captcha.";
+    result.className = "error";
     //alert("Please enter a valid captcha.");
     return false;
   }
